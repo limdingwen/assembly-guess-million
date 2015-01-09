@@ -68,9 +68,7 @@ _loop:
 	; Write prompt
 
 	mov eax, [tries]
-	mov ebx, 1 ; Optimization warning: May change. Do not use if tries > 9. Use standard __itoa instead.
-	mov ecx, 10 ; Optimized
-	call __itoa_knowndigits
+	call __itoa
 	
 	mov ecx, eax
 	mov edx, ebx
@@ -397,13 +395,13 @@ section .data
 
 	_dev_random db "/dev/random", 0x0
 	
-	maxrand equ 100
-	tries dd 6
+	maxrand equ 1000000
+	tries dd 18
 
-	prompt db " tries left. Input number (1-100): "
+	prompt db " tries left. Input number (1-1000000): "
 	prompt_len equ $-prompt
 
-	hello db 0xa, "Welcome to the guessing game!", 0xa, "I am now thinking of a number. What is it?", 0xa, "Take a guess, from one to one hundred.", 0xa, 0xa
+	hello db 0xa, "Welcome to the guessing game!", 0xa, "I am now thinking of a number. What is it?", 0xa, "Take a guess, from one to one million.", 0xa, "OUTDATED IF UPDATED ORIGINAL! (HACKED)", 0xa, 0xa
 	hello_len equ $-hello
 
 	reenter db "? REENTER", 0xa, "Invalid unsigned integer. Please re-enter your input.", 0xa

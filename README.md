@@ -1,6 +1,6 @@
 	SECTION I: WELCOME
 
-Welcome to the guessing game README!
+Welcome to the guessing game (million-fork) README!
 
 First of all, Guess is written and distributed by Lim Ding Wen, 2014. I distribute the software AS IS and do not provide any warranty. However as it is under the GNU License, you may edit it and redistribute it to your will. (Basically I don't care what you do with this thing.) View the full license here: https://gnu.org/licenses/gpl.html
 
